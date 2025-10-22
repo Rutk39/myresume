@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.30d9564c.css",
+    "main.js": "/static/js/main.dfe37482.js",
+    "static/js/453.8952797a.chunk.js": "/static/js/453.8952797a.chunk.js",
+    "static/media/rutpatel.png": "/static/media/rutpatel.7738324630bc4b86fc17.png",
+    "static/media/Rut_Logo.png": "/static/media/Rut_Logo.7c3239801ed4c5d45237.png",
+    "index.html": "/index.html",
+    "main.30d9564c.css.map": "/static/css/main.30d9564c.css.map",
+    "main.dfe37482.js.map": "/static/js/main.dfe37482.js.map",
+    "453.8952797a.chunk.js.map": "/static/js/453.8952797a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30d9564c.css",
+    "static/js/main.dfe37482.js"
+  ]
+}
