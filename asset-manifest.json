@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.ecdd6d00.css",
+    "main.css": "./static/css/main.768b09c1.css",
     "main.js": "./static/js/main.66c7a688.js",
     "static/js/453.8952797a.chunk.js": "./static/js/453.8952797a.chunk.js",
     "static/media/Rut_Logo.png": "./static/media/Rut_Logo.7c3239801ed4c5d45237.png",
     "index.html": "./index.html",
-    "main.ecdd6d00.css.map": "./static/css/main.ecdd6d00.css.map",
+    "main.768b09c1.css.map": "./static/css/main.768b09c1.css.map",
     "main.66c7a688.js.map": "./static/js/main.66c7a688.js.map",
     "453.8952797a.chunk.js.map": "./static/js/453.8952797a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecdd6d00.css",
+    "static/css/main.768b09c1.css",
     "static/js/main.66c7a688.js"
   ]
 }
