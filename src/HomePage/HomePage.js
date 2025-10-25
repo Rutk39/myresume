@@ -87,7 +87,7 @@ function HomePage() {
             if (section) {
               section.scrollIntoView({ behavior: 'smooth' });
             }
-          }}> Learn More > </button>
+          }}> Learn More </button>
           </div>
           
           <div className={styles.horizontalLine2}>  
