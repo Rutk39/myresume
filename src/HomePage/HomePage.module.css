@@ -105,6 +105,7 @@
 
 }
 .description{
+    width:auto;
     color: white;
     font-size: 20px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -117,4 +118,88 @@
       transform: translateY(-10px);
     }
   }
-  
+  .sectionWithBackground2 {
+    
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh; /* Sets the height of the section to the full viewport height */
+    width: 100%; /* Ensures the section takes up the full width */
+    scale: 1.0;
+}
+.aboutme{
+    display : flex;
+    flex-direction: column;
+    color: white;
+    font-size: 24px;
+    margin-left: 10%;
+    max-width: 100%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+.horizontalLine2 {
+    display: flex;
+    flex-direction: row;
+    border: none; /* Remove default border */
+    height: 9px; /* Set the height of the line */
+    background-color: white; /* Set the color of the line */
+    width: 20%; /* Set the width of the line */
+    margin-top: 5%;
+}
+.middleSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(3, 3, 3);
+    overflow: hidden;
+}
+.skillcard{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 20%;
+    margin: 2%;
+    padding: 4%;
+    font: bold;
+    font-size: large;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgba(211, 211, 211, 0.313);
+    border-radius: 10px;
+    color: white;
+    transition: transform 0.3s ease;
+
+}
+.description2{
+    color: rgb(249, 248, 248);
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-right: 10%;
+}
+.learnmoreButton{
+    width: 10%;
+    height: 10%;
+    border-radius: 3%;
+    font-size: medium;
+    font-style: bold;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    background-color: rgba(10, 154, 244, 0.705);
+    border: none;
+    margin-bottom: 5%;
+    
+}
+.skillSlider {
+    display: flex;
+    overflow-x: auto;
+    width: 90%;
+    height: 100%;
+    scroll-snap-type: x mandatory;
+  }
+    .skillSlider::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for WebKit browsers */
+    }  
