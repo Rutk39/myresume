@@ -61,7 +61,8 @@
     flex-direction: column;
     justify-content: center;
     flex: 1;
-    z-index: 0;
+    z-index: 1;
+    position: relative;
     background-color: black;
 }
 .sectionWithBackground {
@@ -135,8 +136,10 @@
     height: 100vh; /* Sets the height of the section to the full viewport height */
     width: 100%; /* Ensures the section takes up the full width */
     scale: 1.0;
+    z-index: 1;
 }
 .aboutme{
+    position: relative;
     display : flex;
     flex-direction: column;
     color: white;
@@ -145,6 +148,7 @@
     max-width: 100%;
     margin-top: 5%;
     margin-bottom: 2%;
+    z-index: 1;
 }
 .horizontalLine2 {
     display: flex;
@@ -317,5 +321,39 @@
       
       .contactLink:hover {
         color: #0056b3;
+      }
+      
+      .webBackground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      
+      .webSvg {
+        width: 100%;
+        height: 100%;
+      }
+      
+      .webLine {
+        stroke: #1789fa;
+        stroke-width: 0.3;
+        opacity: 0.17;
+        animation: pulseLine 4s ease-in-out infinite;
+      }
+      
+      @keyframes pulseLine {
+        0%, 100% {
+          stroke-opacity: 0.25;
+          stroke-width: 0.3;
+        }
+        50% {
+          stroke-opacity: 0.45;
+          stroke-width: 0.6;
+        }
       }
       

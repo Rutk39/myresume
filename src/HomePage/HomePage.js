@@ -8,10 +8,6 @@ import { MdEmail } from 'react-icons/md';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 
-
-//import profile from '../assets/rutpatel.png'
-//import profile from '../assets/Untitled.svg'
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -26,6 +22,7 @@ const cardVariants = {
   hidden: { opacity: 0, x: -50 }, // Slide in from left
   visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
 };
+
 
 const skills = [
   { name: "HTML & CSS", icon: <FaHtml5 color="#e34c26" size={50} /> },
@@ -76,6 +73,7 @@ function HomePage() {
       </section>
 
       <section className={`${styles.content} ${styles.sectionWithBackground}`}>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,11 +98,36 @@ function HomePage() {
           
        </section>
         <section className={`${styles.content} ${styles.sectionWithBackground2}`} id="targetSection">
+        <div className={styles.webBackground}>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className={styles.webSvg}>
+            {[...Array(10)].map((_, i) => (
+              <line
+                key={`h-${i}`}
+                x1="0"
+                y1={i * 10}
+                x2="100"
+                y2={i * 10}
+                className={styles.webLine}
+              />
+            ))}
+            {[...Array(10)].map((_, i) => (
+              <line
+                key={`v-${i}`}
+                x1={i * 10}
+                y1="0"
+                x2={i * 10}
+                y2="100"
+                className={styles.webLine}
+              />
+            ))}
+          </svg>
+        </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className={styles.aboutme}>
+              
               <div className={styles.horizontalLine2}>  
               </div>
               <div className={styles.name2}> <br></br><h2>About me</h2>
@@ -145,6 +168,30 @@ function HomePage() {
           
         </section>
         <section className={`${styles.content} ${styles.sectionWithBackground2}`} id="projectSection">
+        <div className={styles.webBackground}>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className={styles.webSvg}>
+            {[...Array(10)].map((_, i) => (
+              <line
+                key={`h-${i}`}
+                x1="0"
+                y1={i * 10}
+                x2="100"
+                y2={i * 10}
+                className={styles.webLine}
+              />
+            ))}
+            {[...Array(10)].map((_, i) => (
+              <line
+                key={`v-${i}`}
+                x1={i * 10}
+                y1="0"
+                x2={i * 10}
+                y2="100"
+                className={styles.webLine}
+              />
+            ))}
+          </svg>
+        </div>
           <motion.div className={styles.sectionHeader}>
             <motion.div className={styles.horizontalLine3}></motion.div>
             <h2 className={styles.name3}>Projects</h2>
@@ -174,6 +221,30 @@ function HomePage() {
           </motion.div>
         </section>
         <section className={`${styles.content} ${styles.sectionWithBackground2}`} id="projectSection">
+        <div className={styles.webBackground}>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className={styles.webSvg}>
+            {[...Array(10)].map((_, i) => (
+              <line
+                key={`h-${i}`}
+                x1="0"
+                y1={i * 10}
+                x2="100"
+                y2={i * 10}
+                className={styles.webLine}
+              />
+            ))}
+            {[...Array(10)].map((_, i) => (
+              <line
+                key={`v-${i}`}
+                x1={i * 10}
+                y1="0"
+                x2={i * 10}
+                y2="100"
+                className={styles.webLine}
+              />
+            ))}
+          </svg>
+        </div>
           <motion.div className={styles.sectionHeader}>
             <motion.div className={styles.horizontalLine3}></motion.div>
             <h2 className={styles.name3}>Contact</h2>
