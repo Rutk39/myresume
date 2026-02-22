@@ -1,0 +1,376 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #f5f7ff;
+  background:
+    radial-gradient(1200px 500px at 75% -10%, rgba(56, 136, 255, 0.16), transparent 55%),
+    linear-gradient(180deg, #060910 0%, #060a14 32%, #0a1224 100%);
+}
+
+.particleMount {
+  z-index: 0 !important;
+}
+
+.heroScene {
+  height: 108vh;
+  position: relative;
+}
+
+.storyScene {
+  position: relative;
+  min-height: 78vh;
+}
+
+.stickyFrame {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroVisual {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 17% 22%, rgba(76, 146, 255, 0.24), transparent 44%),
+    radial-gradient(circle at 80% 28%, rgba(69, 194, 255, 0.16), transparent 46%),
+    linear-gradient(155deg, rgba(8, 14, 28, 0.94), rgba(6, 10, 18, 0.96));
+}
+
+.heroVisual::after {
+  content: '';
+  position: absolute;
+  inset: 14% 9%;
+  border: 1px solid rgba(130, 170, 255, 0.2);
+  border-radius: 28px;
+  box-shadow: inset 0 0 80px rgba(58, 127, 255, 0.1);
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 2;
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #9bc5ff;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.1rem, 5.2vw, 4.8rem);
+  max-width: 13ch;
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  max-width: 55ch;
+  line-height: 1.68;
+  color: #d6e6ff;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  margin-top: 18px;
+}
+
+.storyScene {
+  margin-top: 0;
+}
+
+.storyScene .stickyFrame {
+  position: relative;
+  top: auto;
+  height: auto;
+  min-height: 78vh;
+  overflow: visible;
+  padding: clamp(20px, 4vh, 48px) 0 clamp(16px, 3vh, 36px);
+}
+
+.storyGrid {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 20px;
+  align-items: start;
+  padding-top: 0;
+}
+
+.metricBoard {
+  border-radius: 22px;
+  min-height: 52vh;
+  padding: 1.8rem;
+  background: linear-gradient(160deg, rgba(12, 23, 44, 0.9), rgba(9, 15, 28, 0.92));
+  border: 1px solid rgba(129, 176, 255, 0.22);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.boardLight {
+  width: 52px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(195, 221, 255, 0.9);
+  margin-bottom: 1.2rem;
+}
+
+.metric {
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+  margin: 0.1rem 0 0.2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.metricLabel {
+  margin: 0 0 1.2rem;
+  color: #cfe3ff;
+}
+
+.storyText h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.45rem, 2.8vw, 2.25rem);
+  letter-spacing: -0.02em;
+}
+
+.storyText p {
+  color: #dae8ff;
+  line-height: 1.7;
+  margin: 0 0 12px;
+}
+
+.craftScene {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  padding: 4vh 0 10vh;
+}
+
+.craftHeader {
+  margin-bottom: 18px;
+}
+
+.craftHeader h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3.2vw, 2.7rem);
+  letter-spacing: -0.02em;
+}
+
+.roadmap {
+  position: relative;
+  padding-left: 34px;
+}
+
+.roadmap::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(146, 196, 255, 0.15), rgba(102, 159, 244, 0.65), rgba(146, 196, 255, 0.15));
+}
+
+.roadmapItem {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.roadmapNode {
+  position: absolute;
+  left: -33px;
+  top: 5px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #d7ebff 0%, #77b0ff 48%, #3b6db7 100%);
+  box-shadow: 0 0 0 6px rgba(80, 136, 220, 0.2), 0 6px 16px rgba(0, 0, 0, 0.35);
+  display: grid;
+  place-items: center;
+}
+
+.roadmapNode span {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #e9f3ff;
+}
+
+.roadmapCard {
+  background: linear-gradient(160deg, rgba(12, 23, 44, 0.9), rgba(9, 15, 28, 0.92));
+  border: 1px solid rgba(129, 176, 255, 0.22);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.roadmapHeader {
+  width: 100%;
+  border: none;
+  text-align: left;
+  background: transparent;
+  color: inherit;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.projectIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(146, 197, 255, 0.25);
+  background: rgba(12, 25, 48, 0.65);
+  display: grid;
+  place-items: center;
+  color: #b8d8ff;
+  font-size: 1rem;
+}
+
+.roadmapHeader h3 {
+  margin: 0;
+}
+
+.chevron {
+  font-size: 1.5rem;
+  color: #b9d8ff;
+  transition: transform 0.25s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.roadmapBody {
+  padding: 0 16px 16px;
+  border-top: 1px solid rgba(126, 176, 255, 0.2);
+}
+
+.projectCard,
+.notesCard {
+  background: linear-gradient(160deg, rgba(12, 23, 44, 0.9), rgba(9, 15, 28, 0.92));
+  border: 1px solid rgba(129, 176, 255, 0.22);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.meta {
+  font-size: 0.92rem;
+  color: #bfd9ff;
+}
+
+.meta strong {
+  color: #eef5ff;
+}
+
+.highlights {
+  margin: 8px 0 10px;
+  padding-left: 18px;
+  color: #dbe8ff;
+}
+
+.highlights li {
+  margin-bottom: 6px;
+  line-height: 1.55;
+}
+
+.impact {
+  color: #9fc7ff;
+  font-weight: 600;
+}
+
+.roadmapBody a {
+  display: inline-block;
+  margin-top: 6px;
+  color: #edf4ff;
+  text-decoration: none;
+  border: 1px solid rgba(128, 178, 255, 0.35);
+  border-radius: 999px;
+  padding: 9px 12px;
+  background: rgba(13, 23, 44, 0.55);
+}
+
+.notesCard {
+  width: min(1080px, 92vw);
+  margin: 0 auto 10vh;
+}
+
+.notesCard h2 {
+  margin-top: 0;
+}
+
+.notesCard p {
+  margin-bottom: 0;
+  color: #dbe8ff;
+  line-height: 1.65;
+}
+
+@media (max-width: 980px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .heroScene,
+  .storyScene {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .stickyFrame {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    padding: 14vh 0 8vh;
+  }
+
+  .title {
+    max-width: 100%;
+  }
+
+  .storyScene {
+    margin-top: 0;
+  }
+
+  .metricBoard {
+    min-height: auto;
+    padding: 1.4rem;
+  }
+
+  .craftScene,
+  .notesCard {
+    width: 94vw;
+  }
+
+  .roadmap {
+    padding-left: 24px;
+  }
+
+  .roadmap::before {
+    left: 7px;
+  }
+
+  .roadmapNode {
+    left: -23px;
+  }
+}

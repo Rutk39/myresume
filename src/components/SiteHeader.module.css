@@ -1,0 +1,73 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  width: min(1120px, 94vw);
+  margin: 14px auto 0;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(4, 9, 20, 0.72);
+  border: 1px solid rgba(130, 171, 245, 0.3);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoLink {
+  display: inline-flex;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.tab {
+  border: 1px solid transparent;
+  background: transparent;
+  color: #edf3ff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab:hover {
+  border-color: rgba(144, 188, 255, 0.42);
+  background: rgba(17, 37, 72, 0.7);
+}
+
+.active {
+  border-color: rgba(144, 188, 255, 0.66);
+  background: rgba(35, 85, 162, 0.42);
+}
+
+@media (max-width: 760px) {
+  .header {
+    width: 96vw;
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-radius: 16px;
+  }
+
+  .logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .tab {
+    padding: 7px 10px;
+    font-size: 0.84rem;
+  }
+}

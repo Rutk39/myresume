@@ -1,0 +1,260 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #f5f7ff;
+  background:
+    radial-gradient(1200px 500px at 75% -10%, rgba(56, 136, 255, 0.16), transparent 55%),
+    linear-gradient(180deg, #060910 0%, #060a14 32%, #0a1224 100%);
+}
+
+.particleMount {
+  z-index: 0 !important;
+}
+
+.heroScene {
+  height: 108vh;
+  position: relative;
+}
+
+.storyScene {
+  position: relative;
+  min-height: 78vh;
+}
+
+.stickyFrame {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroVisual {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 16% 24%, rgba(73, 150, 255, 0.25), transparent 45%),
+    radial-gradient(circle at 80% 26%, rgba(60, 187, 255, 0.15), transparent 45%),
+    linear-gradient(155deg, rgba(8, 14, 28, 0.94), rgba(6, 10, 18, 0.96));
+}
+
+.heroVisual::after {
+  content: '';
+  position: absolute;
+  inset: 14% 9%;
+  border: 1px solid rgba(130, 170, 255, 0.2);
+  border-radius: 28px;
+  box-shadow: inset 0 0 80px rgba(58, 127, 255, 0.1);
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 2;
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #9bc5ff;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.1rem, 5.1vw, 4.7rem);
+  max-width: 13ch;
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  max-width: 56ch;
+  line-height: 1.68;
+  color: #d6e6ff;
+  font-size: clamp(1rem, 1.8vw, 1.22rem);
+  margin-top: 18px;
+}
+
+.storyScene {
+  margin-top: 0;
+}
+
+.storyScene .stickyFrame {
+  position: relative;
+  top: auto;
+  height: auto;
+  min-height: 78vh;
+  overflow: visible;
+  padding: clamp(20px, 4vh, 48px) 0 clamp(16px, 3vh, 36px);
+}
+
+.storyGrid {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 18px;
+  align-items: start;
+  padding-top: 0;
+}
+
+.badgeCard,
+.domainCard {
+  background: linear-gradient(160deg, rgba(12, 23, 44, 0.9), rgba(9, 15, 28, 0.92));
+  border: 1px solid rgba(129, 176, 255, 0.22);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.badgeLabel {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9fc7ff;
+}
+
+.badgeCard h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+}
+
+.badgeCard p {
+  margin: 0;
+  color: #dbe8ff;
+  line-height: 1.65;
+}
+
+.storyText h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.45rem, 2.8vw, 2.25rem);
+}
+
+.storyText p {
+  margin: 0;
+  color: #dbe8ff;
+  line-height: 1.7;
+}
+
+.gridSection {
+  width: min(1080px, 92vw);
+  margin: 0 auto 10vh;
+}
+
+.sectionHeader h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+}
+
+.journeyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.journeyCard {
+  background: linear-gradient(160deg, rgba(12, 23, 44, 0.9), rgba(9, 15, 28, 0.92));
+  border: 1px solid rgba(129, 176, 255, 0.22);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.journeyCard h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: clamp(1.08rem, 2.1vw, 1.4rem);
+}
+
+.journeyCard p {
+  margin: 0 0 8px;
+  color: #dbe8ff;
+  line-height: 1.66;
+}
+
+.domainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.domainCard h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.intro {
+  margin: 0 0 10px;
+  color: #d8e7ff;
+  line-height: 1.65;
+}
+
+.domainCard ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.domainCard li {
+  color: #dbe8ff;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.skills {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills span {
+  border: 1px solid rgba(126, 176, 255, 0.3);
+  background: rgba(10, 21, 41, 0.62);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #d9e8ff;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 980px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 760px) {
+  .heroScene,
+  .storyScene {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .stickyFrame {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    padding: 14vh 0 8vh;
+  }
+
+  .title {
+    max-width: 100%;
+  }
+
+  .storyScene {
+    margin-top: 0;
+  }
+}

@@ -1,286 +1,210 @@
-import React from 'react'
-import styles from '../HomePage/HomePage.module.css'
-import logo from '../assets/Rut_Logo.png'
-import { motion } from 'framer-motion'
-import { FaHtml5, FaJava, FaPython, FaJsSquare, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiTypescript, SiMongodb } from 'react-icons/si';
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import {
+  FaDatabase,
+  FaHtml5,
+  FaJava,
+  FaJsSquare,
+  FaLinkedin,
+  FaGithub,
+  FaNodeJs,
+  FaPython,
+  FaReact,
+} from 'react-icons/fa';
+import { SiMongodb, SiTypescript } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
-
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, x: -50 }, // Slide in from left
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-};
-
+import portraitImage from '../assets/rutpatel.png';
+import SiteHeader from '../components/SiteHeader';
+import ParticleBackground from '../components/ParticleBackground';
+import styles from './HomePage.module.css';
 
 const skills = [
-  { name: "HTML & CSS", icon: <FaHtml5 color="#e34c26" size={50} /> },
-  { name: "Java", icon: <FaJava color="#007396" size={50} /> },
-  { name: "Python", icon: <FaPython color="#3776AB" size={40} /> },
-  { name: "JavaScript", icon: <FaJsSquare color="#f7df1e" size={40} /> },
-  { name: "ReactJS", icon: <FaReact color="#61DBFB" size={40} /> },
-  { name: "NodeJS", icon: <FaNodeJs color="#68A063" size={40} /> },
-  { name: "SQL", icon: <FaDatabase color="#00758f" size={40} /> },
-  { name: "MongoDB", icon: <SiMongodb color="#47A248" size={40} /> },
-  { name: "TypeScript", icon: <SiTypescript color="#3178c6" size={40} /> },
+  { name: 'HTML & CSS', icon: <FaHtml5 color="#e34c26" size={26} /> },
+  { name: 'Java', icon: <FaJava color="#007396" size={26} /> },
+  { name: 'Python', icon: <FaPython color="#3776AB" size={24} /> },
+  { name: 'JavaScript', icon: <FaJsSquare color="#f7df1e" size={24} /> },
+  { name: 'ReactJS', icon: <FaReact color="#61DBFB" size={24} /> },
+  { name: 'NodeJS', icon: <FaNodeJs color="#68A063" size={24} /> },
+  { name: 'SQL', icon: <FaDatabase color="#00758f" size={24} /> },
+  { name: 'MongoDB', icon: <SiMongodb color="#47A248" size={24} /> },
+  { name: 'TypeScript', icon: <SiTypescript color="#3178c6" size={24} /> },
 ];
 
 const projects = [
   {
     title: 'Real-Time ASL Recognition',
-    description: 'Built an LSTM model with MediaPipe for gesture classification. Improved accuracy by 30%.',
+    description:
+      'Built an LSTM model with MediaPipe for gesture classification and improved recognition accuracy by 30%.',
     link: 'https://github.com/Rutk39/ASL-Recognition',
   },
   {
     title: 'IoT Smart Garden System',
-    description: 'Automated irrigation using sensors and Flask dashboard. Reduced water usage by 33%.',
+    description:
+      'Automated irrigation through sensors and a Flask dashboard, reducing water usage by 33%.',
     link: 'https://github.com/Rutk39/Smart-Garden',
   },
   {
     title: 'WeCureIT Healthcare Platform',
-    description: 'Full-stack Django app for patient records and appointments. Deployed on AWS.',
+    description:
+      'Developed a full-stack Django platform for appointments and records management, deployed on AWS.',
     link: 'https://github.com/Rutk39/WeCureIT',
   },
 ];
 
-
 function HomePage() {
-  return (
-    <div className={styles.homepage}>
-      <section className={styles.header}>
-        <img src={logo} alt="logo" className={styles.logo}/>
-        <button className={styles.tabs}> About </button>
-        <button className={styles.tabs}
-          onClick={() => {
-              const section = document.getElementById('projectSection');
-              if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-              }
-            }
-          }> Projects </button>
-        <button className={styles.tabs}> Contact </button>
-      </section>
+  useEffect(() => {
+    const targetId = sessionStorage.getItem('homeScrollTarget');
+    if (!targetId) {
+      return;
+    }
 
-      <section className={`${styles.content} ${styles.sectionWithBackground}`}>
+    sessionStorage.removeItem('homeScrollTarget');
+    requestAnimationFrame(() => {
+      const section = document.getElementById(targetId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }, []);
+
+  const goToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <main className={styles.page}>
+      <ParticleBackground className={styles.particleMount} />
+      <SiteHeader currentPage="home" onNavigateSection={goToSection} />
+
+      <section className={styles.heroScene}>
+        <div className={styles.heroBackdrop} />
+        <motion.img
+          src={portraitImage}
+          alt="Rut Patel"
+          className={styles.heroPortrait}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        />
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className={styles.intro}>
-            <div className={styles.horizontalLine}>
-            </div>
-            <h1 className={styles.name}>I'm Rut, a <br></br>Full Stack Developer</h1>
-
-            <p className={styles.description}>passionate about building dynamic, responsive web apps. Explore my skills, projects, and journey in web development—and feel free to reach out.
-            </p>
+          className={styles.heroCopy}
+          initial={{ opacity: 0, x: -18 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.65, delay: 0.2 }}
+        >
+          <div className={styles.heroLine} />
+          <h1>
+            I&apos;m Rut,
+            <br />
+            a Full Stack Developer
+          </h1>
+          <br />
+          <p>
+            passionate about building dynamic, responsive web apps. Explore my skills, projects,
+            and journey in web development and feel free to reach out.
+          </p>
+          <div className={styles.heroActions}>
+            <a href="#/research" className={styles.heroActionButton}>
+              Explore Research
+            </a>
+          </div>
         </motion.div>
-          
-        <button className={styles.downArrow}
-          onClick={() => {
-            const section = document.getElementById('targetSection');
-            if (section) {
-              section.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}> V 
+
+        <button type="button" className={styles.downArrow} onClick={() => goToSection('aboutSection')}>
+          V
         </button>
-          
-       </section>
-        <section className={`${styles.content} ${styles.sectionWithBackground2}`} id="targetSection">
-        <div className={styles.webBackground}>
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className={styles.webSvg}>
-            {[...Array(10)].map((_, i) => (
-              <line
-                key={`h-${i}`}
-                x1="0"
-                y1={i * 10}
-                x2="100"
-                y2={i * 10}
-                className={styles.webLine}
-              />
-            ))}
-            {[...Array(10)].map((_, i) => (
-              <line
-                key={`v-${i}`}
-                x1={i * 10}
-                y1="0"
-                x2={i * 10}
-                y2="100"
-                className={styles.webLine}
-              />
-            ))}
-          </svg>
-        </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className={styles.aboutme}>
-              
-              <div className={styles.horizontalLine2}>  
-              </div>
-              <div className={styles.name2}> <br></br><h2>About me</h2>
-              <p className={styles.description2}>I’m a data science graduate student passionate about building AI-powered systems that solve real-world problems. With hands-on experience in machine learning, cloud platforms, and full-stack development, I’ve led impactful academic and personal projects—from real-time ASL recognition to IoT-based automation.
-              </p>
-              <button className={styles.learnmoreButton}
-              onClick={() => {
-                const section = document.getElementById('targetSection');
-                if (section) {
-                  section.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}> Learn More </button>
-              </div>
-              
-              <div className={styles.horizontalLine2}>  
-              </div>
-              <div className={styles.name2}><h2>My Extensive skills in: </h2>
-              </div>
-            </motion.div>
-            
+      </section>
+
+      <section id="aboutSection" className={styles.aboutSection}>
+        <motion.div
+          className={styles.aboutCard}
+          initial={{ opacity: 0, y: 34 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.65 }}
+        >
+          <p className={styles.eyebrow}>About</p>
+          <h2>From concept to deployment, with measurable impact.</h2>
+          <p>
+          With a background in Information Technology and a focus on Data Science, I specialize in architecting end-to-end applications that solve real-world challenges. My toolkit includes Python, JavaScript, and AWS, but my greatest asset is my ability to adapt to new technical frontiers.
+
+<br></br>My work ranges from the granular—detecting anomalies in AI-generated media—to the structural—building IoT automation and healthcare platforms. Having operated in fast-paced corporate environments like Amazon, I understand the importance of scalability and documentation. I am driven by curiosity and a commitment to "ownership," ensuring that every solution I deploy is built to last.
+          </p>
+        </motion.div>
+
+        <div className={styles.skillsGrid}>
+          {skills.map((skill, index) => (
             <motion.div
-              className={styles.middleSection}
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
+              key={skill.name}
+              className={styles.skillCard}
+              initial={{ opacity: 0, y: 26 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.4, delay: index * 0.04 }}
             >
-              <div className={styles.skillSlider} variants={containerVariants} initial="hidden" animate="visible">
-                {skills.map((skill, index) => (
-                  <motion.div key={index} className={styles.skillcard} variants={cardVariants}>
-                    {skill.icon}
-                    <p>{skill.name}</p>
-                  </motion.div>
-                ))}
-              </div>
-
+              {skill.icon}
+              <p>{skill.name}</p>
             </motion.div>
-
-          
-        </section>
-        <section className={`${styles.content} ${styles.sectionWithBackground2}`} id="projectSection">
-        <div className={styles.webBackground}>
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className={styles.webSvg}>
-            {[...Array(10)].map((_, i) => (
-              <line
-                key={`h-${i}`}
-                x1="0"
-                y1={i * 10}
-                x2="100"
-                y2={i * 10}
-                className={styles.webLine}
-              />
-            ))}
-            {[...Array(10)].map((_, i) => (
-              <line
-                key={`v-${i}`}
-                x1={i * 10}
-                y1="0"
-                x2={i * 10}
-                y2="100"
-                className={styles.webLine}
-              />
-            ))}
-          </svg>
+          ))}
         </div>
-          <motion.div className={styles.sectionHeader}>
-            <motion.div className={styles.horizontalLine3}></motion.div>
-            <h2 className={styles.name3}>Projects</h2>
-          </motion.div>
+      </section>
 
-          <motion.div
-            className={styles.projectCards}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              visible: {
-                transition: { staggerChildren: 0.2 },
-              },
-            }}
-          >
-            
-            {projects.map((project, index) => (
-              <motion.div key={index} className={styles.projectCard} variants={cardVariants}>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.projectButton}>
-                  View Project
-                </a>
-              </motion.div>
-            ))}
-          </motion.div>
-        </section>
-        <section className={`${styles.content} ${styles.sectionWithBackground2}`} id="projectSection">
-        <div className={styles.webBackground}>
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className={styles.webSvg}>
-            {[...Array(10)].map((_, i) => (
-              <line
-                key={`h-${i}`}
-                x1="0"
-                y1={i * 10}
-                x2="100"
-                y2={i * 10}
-                className={styles.webLine}
-              />
-            ))}
-            {[...Array(10)].map((_, i) => (
-              <line
-                key={`v-${i}`}
-                x1={i * 10}
-                y1="0"
-                x2={i * 10}
-                y2="100"
-                className={styles.webLine}
-              />
-            ))}
-          </svg>
+      <section id="projectsSection" className={styles.projectsSection}>
+        <div className={styles.sectionHeader}>
+          <p className={styles.eyebrow}>Projects</p>
+          <h2>Selected work</h2>
         </div>
-          <motion.div className={styles.sectionHeader}>
-            <motion.div className={styles.horizontalLine3}></motion.div>
-            <h2 className={styles.name3}>Contact</h2>
-          </motion.div>
 
-          <motion.div
-            className={styles.contactContent}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              visible: {
-                transition: { staggerChildren: 0.2 },
-              },
-            }}
+        <div className={styles.projectGrid}>
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.title}
+              className={styles.projectCard}
+              initial={{ opacity: 0, y: 30, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.24 }}
+              transition={{ duration: 0.45, delay: index * 0.1 }}
+            >
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.projectButton}>
+                View Project
+              </a>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contactSection" className={styles.contactSection}>
+        <p className={styles.eyebrow}>Contact</p>
+        <h2>Let&apos;s build something meaningful.</h2>
+        <p className={styles.contactText}>
+          I am always open to new opportunities, collaborations, and product conversations.
+        </p>
+
+        <div className={styles.contactLinks}>
+          <a href="mailto:rutpatel392@gmail.com" className={styles.contactLink}>
+            <MdEmail size={20} /> rutpatel392@gmail.com
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rut-p-9b2bb7185"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.contactLink}
           >
-            <motion.p className={styles.contactText} variants={cardVariants}>
-              I'm always open to new opportunities, collaborations, or just a friendly chat. Feel free to reach out!
-            </motion.p>
-
-            <motion.div className={styles.contactLinks} variants={cardVariants}>
-              <a href="mailto:rutpatel392@gmail.com" className={styles.contactLink}>
-                <MdEmail size={24} /> rutpatel392@gmail.com
-              </a>
-              <a href="https://www.linkedin.com/in/rut-p-9b2bb7185" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-                <FaLinkedin size={24} /> LinkedIn
-              </a>
-              <a href="https://github.com/Rutk39" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-                <FaGithub size={24} /> GitHub
-              </a>
-            </motion.div>
-          </motion.div>
-
-        </section>
-    </div>
-  )
+            <FaLinkedin size={20} /> LinkedIn
+          </a>
+          <a href="https://github.com/Rutk39" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+            <FaGithub size={20} /> GitHub
+          </a>
+        </div>
+      </section>
+    </main>
+  );
 }
 
-export default HomePage
+export default HomePage;
