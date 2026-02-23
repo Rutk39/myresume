@@ -29,9 +29,9 @@
 
 .heroPortrait {
   position: absolute;
-  right: -3%;
+  right: -2%;
   bottom: 0;
-  width: min(720px, 56vw);
+  width: min(1222px, 100vw);
   max-height: 85vh;
   object-fit: contain;
   z-index: 1;

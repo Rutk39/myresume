@@ -13,7 +13,7 @@ import {
 } from 'react-icons/fa';
 import { SiMongodb, SiTypescript } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
-import portraitImage from '../assets/rutpatel.png';
+import portraitImage from '../assets/Pixelate.png';
 import SiteHeader from '../components/SiteHeader';
 import ParticleBackground from '../components/ParticleBackground';
 import styles from './HomePage.module.css';
